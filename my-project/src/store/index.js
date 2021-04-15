@@ -13,7 +13,9 @@ export default new Vuex.Store({
     ExperienceList:  [],
     CompetenceList: [],
     Langue: "",
+    LangueList: [],
     Loisirs: "",
+    LoisirsList : [],
     about: "",
     Cvprev:"",
     // Download: "",
@@ -37,11 +39,13 @@ export default new Vuex.Store({
       state.ExperienceList.push(value);
     },
     setLangue(state, value) {
-      state.setLangue = value;
+      // state.setLangue = value;
+      state.LangueList.push(value);
     
     },
     setLoisirs(state, value) {
-      state.setLoisirs = value;
+      // state.setLoisirs = value;
+      state.LoisirsList.push(value);
       
     },
     setAbout(state, value) {
@@ -54,9 +58,20 @@ export default new Vuex.Store({
       vuexContext.commit("setExperience", ExperienceData);
     },
 
-
     setFormation(vuexContext, FormationData) {
       vuexContext.commit("setFormation", FormationData);
+    },
+
+    setCompetence(vuexContext, CompetenceData) {
+      vuexContext.commit("setCompetence", CompetenceData);
+    },
+
+    setLangue(vuexContext, LangueData) {
+      vuexContext.commit("setLangue",LangueData);
+    },
+
+    setLoisirs(vuexContext, LoisirsData) {
+      vuexContext.commit("setLoisirs",LoisirsData);
     },
   },
   modules: {},

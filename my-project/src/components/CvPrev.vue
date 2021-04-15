@@ -10,23 +10,21 @@
                     <h3>Formation</h3>
                     <div class="line"></div>
 
-                    <div v-for="(Formation, index) in Formations" :key="index">
+                    <div v-for="(formation, index) in Formation" :key="index">
                         <div class="contents">
-                          <h4>{{ Formations.Formation }}</h4>
-                          <h5><span>{{Formations.Date}}</span></h5>
+                          <h4>{{ formation.Formation }}</h4>
+                          <h5><span>{{formation.Date}}</span></h5>
                         </div>
                       <br />
                     </div>
                 </div>
 
-
-            
                 <div class="experience">
                       <h3>Competence</h3>
                       <div class="line"></div>
-                      <ul class="skills">
-                        <li v-for="(Competences, index) in Competence" :key="index">
-                          {{ index + 1 }} - {{ Competences }}
+                      <ul class="skills" >
+                        <li v-for="(competence, index) in Competence" :key="index">
+                          {{ index + 1 }} - {{ Competence }}
                         </li>
                       </ul>
                 </div>
@@ -34,31 +32,37 @@
               <div class="experience">
                 <h3>EXPERIENCE</h3>
                 <div class="line"></div>
-                  <div v-for="(Experience, index) in Experiences" :key="index">
+                  <div v-for="(experience, index) in Experience" :key="index">
                         <div class="contents">
-                          <h4>{{ Experiences.Experience}}</h4>
-                          <h5><span> {{ Experiences.Date}} </span></h5>
+                          <h4>{{ experience.Experience}}</h4>
+                          <h5><span> {{ experience.Date}} </span></h5>
                         </div>
                     <br />
                   </div>
                 <br />
               </div>
 
-        
+                            <div class="experience">
+                                <h3>Langue</h3>
+                                <div class="line"></div>
+                                <ul class="skills" >
+                                  <li v-for="(langue, index) in Langue" :key="index">
+                                    {{ index + 1 }} - {{ Langue }}
+                                  </li>
+                                </ul>
+                          </div>
+           
 
+                           <div class="experience">
+                                <h3>Loisirs</h3>
+                                <div class="line"></div>
+                                <ul class="skills" >
+                                  <li v-for="(loisirs, index) in Loisirs" :key="index">
+                                    {{ index + 1 }} - {{ Loisirs }}
+                                  </li>
+                                </ul>
+                          </div>
 
-              <div class="personnelInfo">
-                <h1>Langue</h1>
-
-                <p class="aboutMe">{{ Langue }}</p>
-              </div>
-          
-
-              <div class="personnelInfo">
-                <h1>Loisirs</h1>
-
-                <p class="aboutMe">{{ Loisirs }}</p>
-              </div>
 
 
               <button
@@ -77,18 +81,16 @@ export default {
   data() {
     return {
       fullName: this.$store.state.fullName,
-   
 
       Formation: this.$store.state.FormationList[0],
 
       Competence: this.$store.state.CompetenceList[0],
 
-
       Experience: this.$store.state.ExperienceList[0],
 
-      Langue: this.$store.state.Langue,
+      Langue: this.$store.state.LangueList[0],
 
-       Loisirs: this.$store.state.Loisirs,
+       Loisirs: this.$store.state.LoisirsList[0],
     };
   },
   methods: {
